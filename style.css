@@ -1,0 +1,58 @@
+.conteiner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+img{
+    height:2em;
+    width:2em;
+
+}
+
+.final{
+    flex: 1;
+    text-align: end;
+}
+
+.final>form>input{
+
+    width: 5em;
+}
+
+.inicio{
+    flex: 1;
+    text-align: start;
+}
+.centro{
+
+    flex: 0 0 auto;  /*No se expande, mantiene su tamaño según el contenido */
+
+}
+.search{
+    text-align: center;
+}
+.search>form>input{
+    width: 65%; /* Ancho del contenedor */
+     /* Centra el contenedor horizontalmente */
+
+}
+
+input[type="search"] {
+    flex: 1; /* El campo de búsqueda ocupa todo el espacio disponible */
+    padding: 1em; /* Espacio interno para mejorar la apariencia */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    border: 1px solid #ccc; /* Borde del input */
+    border-radius: 10px 0 0 10px;  /*Bordes redondeados */
+
+}
+
+.search>form>button {
+    padding: 1em 2em; /* Espacio interno del botón */
+    border: 1px solid #ccc; /* Sin borde */
+    border-radius: 0 10px 10px 0;  /*Bordes redondeados */
+
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-left: -0.5em;  /*Espacio entre el campo de búsqueda y el botón */
+}
