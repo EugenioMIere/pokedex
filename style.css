@@ -45,6 +45,7 @@ input[type="search"] {
     box-sizing: border-box; /* Incluye el padding en el ancho total */
     border: 1px solid #ccc; /* Borde del input */
     border-radius: 10px 0 0 10px;  /*Bordes redondeados */
+    margin-bottom: 75px;
 
 }
 
@@ -55,4 +56,8 @@ input[type="search"] {
 
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     margin-left: -0.5em;  /*Espacio entre el campo de búsqueda y el botón */
+}
+
+table {
+    margin: 0 auto;
 }
