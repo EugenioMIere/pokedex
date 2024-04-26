@@ -19,7 +19,7 @@
     <h1>Pokedex</h1>
      </div>
     <div class="final">
-    <form action="" method="post" >
+    <form action="validar_session.php" method="post" >
         <label for="user" ></label>
         <input type="text" id="user" name="user" required placeholder="Usuario">
 
