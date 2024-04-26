@@ -1,5 +1,5 @@
 <?php
-
+include_once 'header.php';
 if (isset($_POST['search'])){
     $pokemon_buscado = ($_POST['search']);
     $pokemon_encontrado = false;

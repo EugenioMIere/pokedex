@@ -5,7 +5,7 @@
     align-items: center;
     padding: 1em;
 }
-img{
+.inicio>img,.imagen_pokemon>img{
     height:2em;
     width:2em;
 
