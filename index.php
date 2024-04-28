@@ -29,7 +29,7 @@
         $nombrePokemon = pathinfo($imagen, PATHINFO_FILENAME);
         echo "<tr>";
         echo "<td class=\"imagen_pokemon\"><img src=\"$imagen\" alt=\"$nombrePokemon\"></td>";
-        echo "<td class=\"tipo_pokemon\">  </td>";
+        echo "<td class=\"tipo_pokemon\"> gi </td>";
         echo "<td class=\"numero_pokemon\">$numero</td>";
         echo "<td class=\"nombre_pokemon\">$nombrePokemon</td>";
         echo "</tr>";

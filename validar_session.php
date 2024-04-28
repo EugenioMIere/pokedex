@@ -13,6 +13,8 @@ if ($esValido){
     $_SESSION['user'] = $user;
 
     header("location: vista_administrador.php"); // La vista_administrador nos lleva a la pag principal de administrador logueado
+
+
     exit();
 } else { // si el usuario no está registrado, redirige al index
     header("location: index.php");

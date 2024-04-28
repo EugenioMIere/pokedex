@@ -19,14 +19,34 @@
     <h1>Pokedex</h1>
      </div>
     <div class="final">
-    <form action="validar_session.php" method="post" >
-        <label for="user" ></label>
-        <input type="text" id="user" name="user" required placeholder="Usuario">
 
-        <label for="password"></label>
-        <input type="password" id="password" name="password" required placeholder="Clave">
-        <button type="submit" >Ingresar</button>
-    </form>
+        <?php
+
+
+
+        // Si no se encuentra iniciada una sesion este muestra el formulario de lo contrario muestra datos del usuario
+
+        if (session_status()==1) {
+         ?>
+            <form action="validar_session.php" method="post" >
+                <label for="user" ></label>
+                <input type="text" id="user" name="user" required placeholder="Usuario">
+
+                <label for="password"></label>
+                <input type="password" id="password" name="password" required placeholder="Clave">
+                <button type="submit" >Ingresar</button>
+            </form>
+         <?php
+
+        } else {
+            // Si se inicio una cesion mostrara el nombre del usuario
+
+            $user = $_SESSION['user'];
+
+            echo "Usuario: ".$user;
+
+        }
+        ?>
     </div>
     </div>
 </header>
