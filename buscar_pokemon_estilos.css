@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.pokemon {
+    margin: 30px;
+    display: flex;
+}
+
+.imagen_pokemon {
+    width: 100px; 
+    height: auto; 
+    margin-right: 20px; 
+}
+
+.nombre_pokemon,
+.tipo_pokemon {
+    margin: 0; 
+}
+
+.nombre_tipo_container {
+    display: flex;
+    align-items: center; 
+}
+
+.descripcion_pokemon {
+    margin-top: 10px; 
+    text-align: center; 
+}

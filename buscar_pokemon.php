@@ -1,34 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    </head>
+<body>
+
 <?php
 include_once 'header.php';
 if (isset($_POST['search'])){
     $pokemon_buscado = ($_POST['search']);
     $pokemon_encontrado = false;
-    $directorio_imagenes = "/pokedex/imagenes_subidas_por_admin/";
+    
+    // Establecer conexion con la base de datos
+    // Información de mi BDD
+    $servername = "localhost";
+    $username = "root";
+    $password_bd = "";
+    $database = "tp_pokedex";
 
-    // Obtener la lista de archivos en la carpeta de imágenes
-        $archivos = scandir($_SERVER['DOCUMENT_ROOT'] . $directorio_imagenes);
- 
-         // Recorrer los archivos y Buscar el pokemon por el nombre ingresado
-         foreach ($archivos as $archivo) {
-            if (is_file($_SERVER['DOCUMENT_ROOT'] . $directorio_imagenes . $archivo)) {
-                // Obtener el nombre del archivo sin la extensión
-                $nombre_archivo = pathinfo($archivo, PATHINFO_FILENAME);
-                // Comparar ignorando mayúsculas y minúsculas
-                if (strcasecmp($nombre_archivo,$pokemon_buscado) === 0) {
-                    // Mostrar la imagen si se encuentra
-                    echo "<img src='$directorio_imagenes$archivo' alt='$nombre_archivo'>";
-                    $pokemon_encontrado = true;
-                    // Terminar el bucle ya que se encontró el archivo
-                    break;
-                } 
-            } 
-         } if (!$pokemon_encontrado){
-            echo "Pokemon inexistente";
-         }
-} else if (!isset($_POST['search'])){
-    // Si no buscó ningún pokemon, redirigir al index
-    header("Location: index.php");
+    // Crear conexion 
+    $conn = mysqli_connect($servername, $username, $password_bd, $database);
+
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+
+// Consulta para obtener el pokemon buscado 
+$sql = "SELECT * FROM pokemon WHERE nombre = '" . $pokemon_buscado . "'";
+
+$result = mysqli_query($conn, $sql);
+
+// Si se devuelve un pokemon
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)){
+        // Imprimir la informacion del pokemon
+        echo '<div class="pokemon">';
+       echo '<img class="imagen_pokemon" src="' . $row["imagen"] . '" alt="' . $row["nombre"] . '">';
+       echo 'div clas=="nombre_tipo_container">';
+       echo '<h2 class="nombre_pokemon"' . $row["nombre"] . '</h2>';
+       echo '<p> class="tipo_pokemon"<strong>Tipo:</strong> ' . $row["tipo"] . '</p>';
+       echo '</div>';
+       echo '<p class="descripcion_pokemon"><strong>Descripción:</strong> ' . $row["descripcion"] . '</p>';
+       echo '</div>';
+    }
+} else {
+    echo "El pokemon buscado es inexistente";
+}
+} else {
+    // Si no busca nada, redirige al index
+    header(location: 'index.php');
     exit();
 }
 
 ?>
+</body>
+</html>
