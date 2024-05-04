@@ -53,7 +53,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 } else {
     // Si no busca nada, redirige al index
-    header(location: 'index.php');
+    header('Location: index.php');
     exit();
 }
 
