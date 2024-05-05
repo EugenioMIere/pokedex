@@ -1,6 +1,6 @@
 <?php
 // Información de mi BDD
-    $servername = "localhost";
+    $servername = "localhost:3307";
     $username = "root";
     $password_bd = "";
     $database = "tp_pokedex";

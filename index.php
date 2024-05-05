@@ -9,12 +9,12 @@
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 </head>
 <body>
-    <?php
-    include_once 'header.php';
+<?php
+include_once 'header.php';
 
-    include_once('mostrar_tabla_usuario.php');
+include_once('mostrar_tabla_usuario.php');
 
-    ?>
+?>
 </table>
 
 </body>

@@ -16,7 +16,7 @@ if (isset($_POST['search'])){
     
     // Establecer conexion con la base de datos
     // Información de mi BDD
-    $servername = "localhost";
+    $servername = "localhost:3307";
     $username = "root";
     $password_bd = "";
     $database = "tp_pokedex";
@@ -41,10 +41,10 @@ if (mysqli_num_rows($result) > 0) {
         // Imprimir la informacion del pokemon
         echo '<div class="pokemon">';
        echo '<img class="imagen_pokemon" src="' . $row["imagen"] . '" alt="' . $row["nombre"] . '">';
-       echo 'div clas=="nombre_tipo_container">';
-       echo '<h2 class="nombre_pokemon"' . $row["nombre"] . '</h2>';
-       echo '<p> class="tipo_pokemon"<strong>Tipo:</strong> ' . $row["tipo"] . '</p>';
-       echo '</div>';
+       echo '<div class="nombre_tipo_container">';
+        echo '<h2 class="nombre_pokemon">' . $row["nombre"] . '</h2>';
+        echo '<p class="tipo_pokemon"><strong>Tipo:</strong> ' . $row["tipo"] . '</p>';
+        echo '</div>';
        echo '<p class="descripcion_pokemon"><strong>Descripción:</strong> ' . $row["descripcion"] . '</p>';
        echo '</div>';
     }
