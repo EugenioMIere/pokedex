@@ -11,6 +11,12 @@
 
 }
 
+.imagen_pokemon {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
 .final{
     flex: 1;
     text-align: end;
@@ -36,6 +42,7 @@
 }
 .search{
     text-align: center;
+    width: 100%;
 }
 .search>form>input{
     width: 65%; /* Ancho del contenedor */
@@ -64,4 +71,9 @@ input[type="search"] {
 
 table {
     margin: 0 auto;
+}
+
+table tbody td img{
+    width: 100px;
+    height: auto;
 }
