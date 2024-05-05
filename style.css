@@ -73,6 +73,32 @@ table {
     margin: 0 auto;
 }
 
+.contenedorBotones{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-around;
+    padding: 0 5px 0 5px;
+}
+
+.btn-modificar{
+    height: 40px;
+}
+
+.btn-modificar:hover{
+    background-color: red;
+    color: gainsboro;
+}
+
+.btn-eliminar:hover{
+    background-color: red;
+    color: gainsboro;
+}
+
+.btn-eliminar{
+    height: 40px;
+}
+
 table tbody td img{
     width: 100px;
     height: auto;

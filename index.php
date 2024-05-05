@@ -12,7 +12,12 @@
 <?php
 include_once 'header.php';
 
-include_once('mostrar_tabla_usuario.php');
+// Verificar si el usuario ha iniciado sesión y es "administrador"
+if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === 'administrador') {
+    include_once('mostrar_tabla_admin.php');
+} else {
+    include_once('mostrar_tabla_usuario.php');
+}
 
 ?>
 </table>

@@ -42,9 +42,14 @@ if ($resultado->num_rows > 0) {
         // Mostrar la imagen en una celda de la tabla
         echo '<td><img src="' . $fila['imagen'] . '" alt="Pokemon"></td>';
         // Agregar la columna de acciones con botones para modificar y eliminar
-        echo "<td> <button> Modificar </button> <button> Eliminar </button> </td>";
+        echo "<td class='contenedorBotones'> 
+            <button><a type='button' href='editar_pokemon.php?id=" . $fila['nombre'] . "' class='btn-modificar'> Modificar</a> </button>
+             
+            <button class='btn-eliminar'> Eliminar </button> 
+        </td>";
         echo "</tr>";
     }
+
     // Cerrar la tabla
     echo "</table>";
 }  else {
