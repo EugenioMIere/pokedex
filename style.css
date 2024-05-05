@@ -103,3 +103,26 @@ table tbody td img{
     width: 100px;
     height: auto;
 }
+
+.actualizarPokemon{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+}
+
+.actualizarPokemon label{
+    font-weight: bold;
+}
+
+.txt-actualizar{
+    height: 20px;
+}
+
+.actualizarPokemon h2{
+    text-align: center;
+}
+
+.btn-actualizar{
+    height: 40px;
+}

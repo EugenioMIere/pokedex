@@ -43,9 +43,12 @@ if ($resultado->num_rows > 0) {
         echo '<td><img src="' . $fila['imagen'] . '" alt="Pokemon"></td>';
         // Agregar la columna de acciones con botones para modificar y eliminar
         echo "<td class='contenedorBotones'> 
-            <button><a type='button' href='editar_pokemon.php?id=" . $fila['nombre'] . "' class='btn-modificar'> Modificar</a> </button>
-             
-            <button class='btn-eliminar'> Eliminar </button> 
+            <button value='" . $fila['nombre'] . "' id='" . $fila['nombre'] . "' class='btn-modificar'> 
+                <a href='editar_pokemon.php?nombre=" . urlencode($fila['nombre']) . "'>Modificar</a>
+            </button>
+            <button value='" . $fila['nombre'] . "' id='" . $fila['nombre'] . "' class='btn-eliminar'> 
+                Eliminar
+            </button>
         </td>";
         echo "</tr>";
     }
@@ -55,6 +58,7 @@ if ($resultado->num_rows > 0) {
 }  else {
     echo "No se encontraron Pokemon en la base de datos.";
 }
+
 
 // Cerrar la conexión
 $conn->close();
