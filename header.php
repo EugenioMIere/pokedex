@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokedex</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style_resp.css'>
 </head>
 <body>
 <header>
@@ -49,7 +50,7 @@
 
 <div class="search">
     <form action="buscar_pokemon.php" method="post">
-        <label for="search">Buscar:</label>
+        <label for="search"></label>
         <input type="search" id="search" name="search" required placeholder="Ingrese el nombre, tipo o número de Pokémon">
         <button type="submit">¿Quién es este Pokémon?</button>
     </form>

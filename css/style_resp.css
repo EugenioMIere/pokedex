@@ -1,0 +1,43 @@
+/* Media queries para dispositivos de hasta 768px */
+@media screen and (max-width: 768px) {
+    .conteiner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .final {
+        margin-top: 20px;
+    }
+    form{
+        display: flex;
+        margin: 0 1em;
+
+    }
+
+    .search input[type="search"] {
+        width: auto;
+        margin-right: 0;
+        flex: 1;
+        border-radius: 10px 0 0 10px;
+        margin-bottom: 0;
+
+
+
+    }
+
+    .search button[type="submit"]{
+        border-radius: 0 10px 10px 0;
+        padding: 1em 0.1em;
+        text-align: center;
+
+
+    }
+
+    .final{
+        font-size: large;
+    }
+    table{
+        margin-top: 1em;
+    }
+
+}
