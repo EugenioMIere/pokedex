@@ -43,6 +43,10 @@ if ($resultado->num_rows > 0) {
 
     // Cerrar la tabla
     echo "</table>";
+    echo "<div class='contenedor-agregar-pokemon'> 
+         <button class='btn-agregar'> <a href='agregar_pokemon.php'> Nuevo Pokémon </a> </button>
+         </div>";
+
 }  else {
     echo "No se encontraron Pokemon en la base de datos.";
 }
