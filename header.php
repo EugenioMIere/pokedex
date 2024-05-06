@@ -34,10 +34,10 @@
                 // Si no se ha iniciado sesión, mostramos el formulario de inicio de sesión
                 ?>
                 <form action="validar_session.php" method="post">
-                    <label for="user">Usuario:</label>
+                    <label for="user"></label>
                     <input type="text" id="user" name="user" required placeholder="Usuario">
 
-                    <label for="password">Clave:</label>
+                    <label for="password"></label>
                     <input type="password" id="password" name="password" required placeholder="Clave">
                     <button type="submit">Ingresar</button>
                 </form>

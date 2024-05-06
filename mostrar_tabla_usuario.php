@@ -23,8 +23,8 @@ if ($resultado->num_rows > 0) {
     while ($fila = $resultado->fetch_assoc()) {
         echo "<tr>";
         // Mostrar los datos del Pokemon en celdas de la tabla
-        echo "<td>" . $fila['numero_identificador'] . "</td>";
-        echo "<td>" . $fila['nombre'] . "</td>";
+        echo "<td >" . $fila['numero_identificador'] . "</td>";
+        echo "<td >" . $fila['nombre'] . "</td>";
         echo '<td><img src="'."./Tipos/" . $fila['tipo'] .".webp". '" ></td>';
         // Mostrar la imagen en una celda de la tabla
         echo '<td><img src="' . $fila['imagen'] . '" alt="Pokemon"></td>';
