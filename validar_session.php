@@ -26,18 +26,8 @@ if (isset($_POST['user']) && isset($_POST['password'])){
 }
 
 function consultarBD ($user, $password){
-    $servername = "localhost:3307";
-    $username = "root";
-    $password_bd = "";
-    $database = "tp_pokedex";
-
-    // Crear conexion 
-    $conn = mysqli_connect($servername, $username, $password_bd, $database);
-
-    // Verificar conexion
-    if (!$conn){
-        die("Error al conectar con la base de datos: " . mysqli_connect_error());
-    }
+    //conectar a bdd
+    include_once 'base_de_datos.php';
 
     // Realizar consulta
     $sql = "SELECT * FROM login WHERE usuario = '" . $user . "' && password = '" . $password . "'";

@@ -1,18 +1,6 @@
 <?php
-// Información de mi BDD
-    $servername = "localhost:3307";
-    $username = "root";
-    $password_bd = "";
-    $database = "tp_pokedex";
-
-    // Crear conexion 
-    $conn = mysqli_connect($servername, $username, $password_bd, $database);
-
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+//conectar a bdd
+include_once 'base_de_datos.php';
 
 // Consulta para obtener todas las imágenes de la tabla "pokemon"
 $sql = "SELECT numero_identificador, nombre, tipo, imagen FROM pokemon";
