@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="editar_pokemon_estilos.css">
     <title>Editar Pokémon</title>
 </head>
 <body>
-<h1>Editar Pokémon</h1>
 <?php
-// Verificar si se ha recibido el ID del Pokémon
-if (isset($_GET['id'])) {
-    $pokemon_id = $_GET['id'];
+include_once('header.php');
+
+echo "<h1>Editar Pokémon</h1>";
 
     //conectar a bdd
     include_once 'base_de_datos.php';
 
+// Verificar si se ha recibido el ID (nombre) del Pokémon
+if (isset($_GET['nombre'])) {
+    $pokemon_nombre = $_GET['nombre'];
+
     // Consulta para obtener los datos del Pokémon
-    $sql = "SELECT * FROM pokemon WHERE nombre = $pokemon_id";
+    $sql = "SELECT * FROM pokemon WHERE nombre = '$pokemon_nombre'";
     $resultado = mysqli_query($conn, $sql);
 
     if ($resultado && mysqli_num_rows($resultado) > 0) {

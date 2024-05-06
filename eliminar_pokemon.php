@@ -1,36 +1,42 @@
-<?php
-// Información de mi BDD
-$servername = "localhost:3307";
-$username = "root";
-$password_bd = "";
-$database = "tp_pokedex";
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Eliminar Pokemon </title>
+    </head> 
+<body>
 
-// Crear conexión
-$conn = mysqli_connect($servername, $username, $password_bd, $database);
+    <?php
+///conectar a bdd
+include_once 'base_de_datos.php';
 
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+// Verificar si se mandó el id (nombre) del pokemon
+if (isset($_GET['nombre'])){
+    $nombre = $_GET['nombre'];
 
-// Verificar si se han enviado los datos del formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los datos del formulario
-    $nombre = $_POST['nombre'];
+    // Conecto a la BDD
+    include_once('base_de_datos.php');
 
-    // Consulta para actualizar los datos del Pokémon
-    $sql = "DELETE from pokemon WHERE nombre='$nombre'";
+    // Consulta para eliminar el Pokemon
+    $sql = "DELETE from pokemon WHERE nombre = '$nombre'";
 
-    // Ejecutar la consulta
-    if (mysqli_query($conn, $sql)) {
-        // Mostrar confirmación mediante JavaScript y redireccionar
-        echo "<script>alert('Los datos del Pokémon se han eliminado correctamente.'); window.location.href = 'vista_administrador.php';</script>";
+    // Guardo resultado en una varialbe
+    $resultado = mysqli_query($conn, $sql);
+
+    // Verifico q no arroje resultados vacíos
+    if ($resultado) {
+        //  Confirmo la eliminación y redirecciono
+        echo "Los datos del Pokémon se han eliminado correctamente.";
     } else {
-        // Mostrar error mediante JavaScript
-        echo "<script>alert('Error al actualizar los datos del Pokémon: " . mysqli_error($conn) . "');</script>";
+        // Muestro el error si no arrojó nada
+        echo "Error al eliminar los datos del Pokémon: " . mysqli_error($conn) . ".";
     }
 }
 
 // Cerrar la conexión
 $conn->close();
 ?>
+
+</body>     
+</html>

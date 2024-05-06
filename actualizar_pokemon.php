@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion = $_POST['descripcion'];
 
         // Consulta para actualizar los datos del Pokémon
-        $sql = "UPDATE pokemon SET nombre = '$nombre', tipo = '$tipo', descripcion = '$descripcion' WHERE nombre = $nombre";
+        $sql = "UPDATE pokemon SET nombre = '$nombre', tipo = '$tipo', descripcion = '$descripcion' WHERE nombre = '$nombre'";
 
         if (mysqli_query($conn, $sql)) {
             echo "Los datos del Pokémon se han actualizado correctamente.";
