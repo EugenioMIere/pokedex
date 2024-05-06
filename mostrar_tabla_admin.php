@@ -47,7 +47,7 @@ if ($resultado->num_rows > 0) {
                 <a href='editar_pokemon.php?nombre=" . urlencode($fila['nombre']) . "'>Modificar</a>
             </button>
             <button value='" . $fila['nombre'] . "' id='" . $fila['nombre'] . "' class='btn-eliminar'> 
-                Eliminar
+                <a href='eliminar_pokemon.php?nombre=" . urlencode($fila['nombre']) . "'>Eliminar</a>
             </button>
         </td>";
         echo "</tr>";
